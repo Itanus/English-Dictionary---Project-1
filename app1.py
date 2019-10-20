@@ -5,7 +5,11 @@ data = json.load(open("data.json"))
 
 
 def translation(word):
-    return data[word]
+    if word.lower() in data:
+        return data[word.lower()]
+    else:
+        return "This word does not exist." \
 
 
-print(translation("rain"))
+print(translation(  input("Type a word: ")))
+
