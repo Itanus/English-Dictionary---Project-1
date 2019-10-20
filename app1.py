@@ -20,5 +20,10 @@ while True:
     answer = input("Type a word: ")
     if answer == '/end':
         break
+
+    word = translation(answer)
+    if type(word) == list:
+        for string in word:
+            print(string)
     else:
-        print(translation(answer))
+        print(word)
